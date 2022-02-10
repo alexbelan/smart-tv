@@ -14,12 +14,12 @@ const ViewVideo: React.FC = () => {
   }
 
   return (
-    <>
+    <div id="viewVideo">
       <ReactPlayer 
         url='https://www.youtube.com/watch?v=M7FIvfx5J10'
         loop={true}
         controls={true}
-        width={"100%"}
+        width={"1280px"}
         height={"720px"}
         onProgress={progressPlayr}
       />
@@ -35,7 +35,7 @@ const ViewVideo: React.FC = () => {
           <button>OK</button>
         </div>
       </div>
-     </>
+     </div>
     );
 }
 
