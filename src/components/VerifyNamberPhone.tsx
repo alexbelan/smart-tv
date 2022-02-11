@@ -8,7 +8,12 @@ const VerifyNamberPhone: React.FC = (props) => {
 
     const [namber, setNamber] = useState<string>("+7(___)___-__-__")
 
+    // const blurInput = () => {
+
+    // }
+
     const changeInput = (event: ChangeEvent<HTMLInputElement>) => {
+        // console.log(event.target.value)
         setNamber(event.target.value)
     }
 
@@ -16,26 +21,43 @@ const VerifyNamberPhone: React.FC = (props) => {
         <div id="verifyNamberPhone">
             <div id="namberPhone" className='namber-phone'>
                 <h2>Введите ваш номер мобильного телефона</h2>
-                <InputMask className='input' {...props} mask="+7(999)999-99-99" value={namber} onChange={changeInput} />
-                <p>и с Вами свяжется наш менеждер для дальнейшей консультации</p>
-                <div>
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button>Стереть</button>
-                    <button>0</button>
+                <div className="box">
+                    <InputMask 
+                    {...props}
+                    className='input'
+                    mask="+7(999)999-99-99"
+                    value={namber} 
+                    onChange={changeInput}
+                     />
                 </div>
-                <div className='checkbox'>
-                    <input type="checkbox" id="checkboxInput" />
-                    <label htmlFor={"checkboxInpu"}>Согласие на обработку персональных данных</label>
+                <div className="box">
+                    <p>и с Вами свяжется наш менеждер для дальнейшей консультации</p>
                 </div>
-                <button>Подтвердить номер</button>
+                <div className="box box-nam-pad">
+                    <div className='nam-pad'>
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                        <button className='erase'>Стереть</button>
+                        <button>0</button>
+                    </div>
+                </div>
+                <div className='box checkbox-box'>
+                    <div className='checkbox-block'>
+                        <input type="checkbox" className='checkbox' id="checkbox" value={0} />
+                        <label className='checkbox-input' htmlFor={"checkbox"}></label>
+                        <label className='text' htmlFor={"checkbox"}>Согласие на обработку персональных данных</label>
+                    </div>
+                </div>
+                <div className='box ready-box'>
+                    <button>Подтвердить номер</button>
+                </div>
             </div>
             <img src={foneImg} alt="" className="img-fone" />
         </div>
